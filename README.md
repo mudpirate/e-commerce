@@ -4,13 +4,7 @@ A sleek, responsive e-commerce frontend built with **React** and **Tailwind CSS*
 
 🔗 **Live Demo:** [e-commerce-one-lyart-97.vercel.app](https://e-commerce-one-lyart-97.vercel.app)
 
----
-
-## 📸 Preview
-
-![App Preview](https://e-commerce-one-lyart-97.vercel.app/preview.jpg) <!-- Optional: Replace with actual screenshot -->
-
----
+-
 
 ## ✨ Features
 
