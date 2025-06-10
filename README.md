@@ -1,47 +1,50 @@
-# 🛒 E-Commerce Cart Page
+# 🛍️ Modern E-Commerce Frontend
 
-A modern, responsive E-Commerce Cart Page built with React. This project is part of a larger e-commerce application and focuses on the user’s shopping cart experience.
+A sleek, responsive e-commerce frontend built with **React** and **Tailwind CSS**, featuring a product catalog, cart system, filtering, and modern UI elements.
 
-[🔗 Live Demo](https://e-commerce-one-lyart-97.vercel.app/Cartpage)
+🔗 **Live Demo:** [e-commerce-one-lyart-97.vercel.app](https://e-commerce-one-lyart-97.vercel.app)
 
 ---
 
 ## 📸 Preview
 
-![Cart Page Preview](https://e-commerce-one-lyart-97.vercel.app/Cartpage/preview.jpg) <!-- Replace with an actual screenshot if available -->
+![App Preview](https://e-commerce-one-lyart-97.vercel.app/preview.jpg) <!-- Optional: Replace with actual screenshot -->
 
 ---
 
 ## ✨ Features
 
-- View items added to the cart
-- Adjust item quantities
-- See live updates to subtotal and total cost
-- Remove items from the cart
-- Mobile-first responsive layout
-- Simple, clean UI with smooth transitions
+- 🏠 **Home Page** with hero section and product highlights
+- 🛍 **Product Listing** with filters (category, price, etc.)
+- 🛒 **Cart Page** with quantity update, remove, and total calculation
+- 💖 **Wishlist** support (if implemented)
+- 📦 **Product Details Page**
+- 🎨 Fully responsive & mobile-friendly
+- 💡 Clean, modern UI using Tailwind CSS
+- ⚡ Deployed with Vercel
 
 ---
 
-## 🛠️ Tech Stack
+## 🔧 Tech Stack
 
-- **Frontend:** React, JavaScript, Tailwind CSS
-- **State Management:** useState (local state), useContext (if used)
-- **Hosting:** Vercel
+- **Frontend:** React, Tailwind CSS
+- **State Management:** useState / useContext
+- **Routing:** React Router
+- **Deployment:** Vercel
 
 ---
 
 ## 🚀 Getting Started
 
-To run this project locally:
+To run the project locally:
 
 ```bash
-# Clone the repository
-git clone https://github.com/your-username/ecommerce-cart-page.git
-cd ecommerce-cart-page
+# 1. Clone the repo
+git clone https://github.com/your-username/ecommerce-app.git
+cd ecommerce-app
 
-# Install dependencies
+# 2. Install dependencies
 npm install
 
-# Start the development server
+# 3. Start the dev server
 npm run dev
