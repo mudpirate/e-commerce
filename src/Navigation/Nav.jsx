@@ -5,11 +5,13 @@ import { FaUser, FaBars, FaTimes } from "react-icons/fa";
 import Submenu from "../components/Submenu.jsx";
 import { useAppContext } from "../context/AppContext";
 import Search from "../components/Search";
+import Login from "../components/Login";
 
 const Nav = () => {
   const { cart } = useAppContext();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarOpen((prev) => !prev);
@@ -21,6 +23,10 @@ const Nav = () => {
 
   const handleMouseLeave = () => {
     setActiveSubmenu(null);
+  };
+
+  const toggleLogin = () => {
+    setIsLoginOpen((prev) => !prev);
   };
 
   return (
@@ -86,9 +92,12 @@ const Nav = () => {
                 {cart.length} {cart.length === 1 ? "item" : "items"} in cart
               </div>
             </Link>
-            <Link to="/account" className="text-black hover:text-gray-400">
+            <button
+              onClick={toggleLogin}
+              className="text-black hover:text-gray-400 transition-colors"
+            >
               <FaUser className="text-xl" />
-            </Link>
+            </button>
             <button
               onClick={toggleSidebar}
               className="md:hidden text-black hover:text-gray-600 p-2 rounded-md transition-colors duration-200"
@@ -103,8 +112,8 @@ const Nav = () => {
           </div>
         </div>
       </div>
-      {/* Mobile Menu */}
 
+      {/* Mobile Menu */}
       {isSidebarOpen && (
         <div className="fixed top-0 right-0 w-64 h-full bg-white shadow-lg z-40 md:hidden px-4 py-6 transition-transform duration-300">
           {/* Close Button */}
@@ -124,13 +133,13 @@ const Nav = () => {
             <Link to="/" className="block text-black hover:text-gray-600">
               Home
             </Link>
-            <Link to="/men" className="block text-black hover:text-gray-600">
+            <Link to="/items" className="block text-black hover:text-gray-600">
               Men
             </Link>
-            <Link to="/women" className="block text-black hover:text-gray-600">
+            <Link to="/items" className="block text-black hover:text-gray-600">
               Women
             </Link>
-            <Link to="/kids" className="block text-black hover:text-gray-600">
+            <Link to="/items" className="block text-black hover:text-gray-600">
               Kids
             </Link>
             <div className="pt-4">
@@ -139,6 +148,9 @@ const Nav = () => {
           </div>
         </div>
       )}
+
+      {/* Login Modal */}
+      <Login isOpen={isLoginOpen} onClose={toggleLogin} />
     </nav>
   );
 };
