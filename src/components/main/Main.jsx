@@ -1,16 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
-import image1 from "../../assets/image1.webp";
+
 import image2 from "../../assets/image2.webp";
 import image3 from "../../assets/image3.avif";
 import image4 from "../../assets/image4.jpg";
-import image5 from "../../assets/image5.jpg";
+
 import { UIContext } from "../UserContext.jsx";
 
-const images = [image1, image2, image3, image4, image5];
+const images = [image2, image3, image4];
 
 function Main() {
-  const { openModal } = useContext(UIContext);
   const [index, setIndex] = useState(0);
 
   const prevImage = () => {
@@ -29,39 +28,43 @@ function Main() {
   useEffect(() => {
     const interval = setInterval(() => {
       nextImage();
-    }, 1700); // Change image every 4 seconds
+    }, 1700);
 
-    return () => clearInterval(interval); // Cleanup on unmount
+    return () => clearInterval(interval);
   }, [index]);
 
   return (
-    <div className="flex items-center justify-center w-full h-screen bg-white mt-0 mb-2">
+    <div className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] mt-0 mb-2">
       {/* Left Arrow */}
-      <div className="absolute left-2 z-10">
+      <div className="absolute left-4 sm:left-6 md:left-8 lg:left-10 top-1/2 -translate-y-1/2 z-10">
         <button
           onClick={prevImage}
-          className="text-black bg-white p-2 shadow-lg hover:bg-gray-400 transition duration-200"
+          className="text-black bg-white/90 hover:bg-white p-3 rounded-full shadow-lg hover:scale-110 transition duration-300 flex items-center justify-center"
         >
-          <FaChevronLeft className="text-xl" />
+          <FaChevronLeft className="text-xl sm:text-2xl md:text-3xl" />
         </button>
       </div>
 
       {/* Image Container */}
-      <div className="w-full relative">
-        <img
-          src={images[index]}
-          alt="carousel"
-          className="object-fill w-[65em] mx-auto h-[30em] transition -mt-14 duration-500"
-        />
+      <div className="w-full h-full flex items-center justify-center">
+        <div className="w-full h-full relative overflow-hidden bg-white">
+          <img
+            src={images[index]}
+            alt="carousel"
+            className="w-full h-full object-contain transition duration-500 ease-in-out"
+            loading="lazy"
+          />
+          {/* Gradient Overlay */}
+        </div>
       </div>
 
       {/* Right Arrow */}
-      <div className="absolute right-2 z-10">
+      <div className="absolute right-4 sm:right-6 md:right-8 lg:right-10 top-1/2 -translate-y-1/2 z-10">
         <button
           onClick={nextImage}
-          className="text-black bg-transparent p-2 shadow-lg hover:bg-gray-400 transition duration-200"
+          className="text-black bg-white/90 hover:bg-white p-3 rounded-full shadow-lg hover:scale-110 transition duration-300 flex items-center justify-center"
         >
-          <FaChevronRight className="text-xl" />
+          <FaChevronRight className="text-xl sm:text-2xl md:text-3xl" />
         </button>
       </div>
     </div>
