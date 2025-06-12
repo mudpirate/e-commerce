@@ -6,6 +6,7 @@ import Submenu from "../components/Submenu.jsx";
 import { useAppContext } from "../context/AppContext";
 import Search from "../components/Search";
 import Login from "../components/Login";
+import shoelogo from "../assets/shoelogo.jpg";
 
 const Nav = () => {
   const { cart } = useAppContext();
@@ -35,7 +36,11 @@ const Nav = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-gray-800">STORE</h1>
+            <img
+              src={shoelogo}
+              alt="Store Logo"
+              className="h-12 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}
