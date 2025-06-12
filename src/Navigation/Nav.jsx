@@ -118,6 +118,9 @@ const Nav = () => {
 
           {/* Links */}
           <div className="mt-0 space-y-4">
+            <Link to="/items" className="block text-black hover:text-gray-600">
+              Products
+            </Link>
             <Link to="/" className="block text-black hover:text-gray-600">
               Home
             </Link>
